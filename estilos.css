@@ -1,0 +1,258 @@
+/* Paleta estilo aeropuerto con teoría del color: profesionalidad y confianza */
+:root {
+	--bg: #FFFFFF;
+	--text: #2C3E50;
+	--heading: #1A3A52;
+	--nav-bg: #5A9FD4;
+	--nav-text: #FFFFFF;
+	--accent: #3A5F7D;
+	--muted: #667C8F;
+	--link: #1E88E5;
+	--shadow-strong: rgba(58, 95, 125, 0.25);
+	--shadow-soft: rgba(90, 159, 212, 0.15);
+	--hover-overlay: rgba(255, 255, 255, 0.15);
+}
+
+body {
+	color: var(--text); /* texto gris-azulado para legibilidad en fondo blanco */
+	background: var(--bg); /* fondo blanco: limpieza y amplitud */
+	font-family: 'Segoe UI', sans-serif;
+	line-height: 1.6;
+}
+
+h1 {
+	font-size: 60px;
+	margin: 0;
+	padding: 20px 0;
+	color: var(--heading); /* azul profundo para autoridad */
+	text-shadow: 1px 1px 2px rgba(200,220,240,0.5);
+	text-align: center;
+}
+
+/* Imagen de contenido responsiva */
+.content-image {
+	display: block;
+	margin: 20px auto;
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(58, 95, 125, 0.15);
+}
+
+/* Secciones de contenido */
+.content-section {
+	max-width: 900px;
+	margin: 40px auto;
+	padding: 0 20px;
+	line-height: 1.8;
+}
+
+.content-section h2 {
+	font-size: 32px;
+	color: var(--heading);
+	margin: 30px 0 15px 0;
+	border-bottom: 3px solid var(--nav-bg);
+	padding-bottom: 10px;
+}
+
+.content-section p {
+	margin: 15px 0;
+	text-align: justify;
+	color: #2C3E50;
+}
+
+/* Enlaces dentro del contenido: visibles y con estilo estándar */
+.content-section a {
+    color: var(--link);          /* azul visible */
+    text-decoration: underline;  /* apariencia de enlace claro */
+    font-weight: 500;
+}
+
+.content-section a:hover {
+    color: var(--accent);        /* azul grisáceo para hover */
+}
+
+.benefits-list,
+.objectives-list,
+.relevance-list,
+.field-list {
+	margin: 20px 0;
+	padding-left: 30px;
+	color: #2C3E50;
+}
+
+/* Ajuste para evitar que los marcadores desplacen el texto */
+.field-list {
+	padding-left: 0;
+	list-style-position: inside;
+}
+
+.benefits-list li,
+.objectives-list li,
+.relevance-list li,
+.field-list li {
+	margin: 12px 0;
+	line-height: 1.7;
+}
+
+.benefits-list li strong,
+.field-list li strong {
+	color: var(--accent);
+}
+
+.site-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 6px;
+	display: flex;
+	gap: 6px;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--nav-bg); /* azul cielo aeropuerto: confianza y profesionalidad */
+	flex-wrap: wrap;
+	box-shadow: 0 2px 8px var(--shadow-soft);
+	border-radius: 16px;
+}
+
+/* Use flex items instead of floats for modern layout */
+li {
+	float: none;
+	margin: 0;
+	padding: 0;
+}
+
+.site-nav li a {
+    display: inline-block;
+    color: var(--nav-text);
+    text-align: center;
+    padding: 10px 14px;
+    text-decoration: none;
+    border-radius: 16px;
+    transition: background-color 140ms ease, transform 120ms ease;
+}
+
+li a:hover,
+li a:focus {
+	background-color: var(--hover-overlay); /* hover sutil con blanco translúcido */
+	transform: translateY(-2px);
+}
+
+.active,
+li.active > a,
+a.active {
+	/* support active class on <a> or <li> */
+	background-color: var(--accent); /* azul gris profundo: profesional y coherente */
+	color: var(--nav-text);
+	font-weight: 700;
+	border-radius: 16px;
+	box-shadow: 0 4px 12px var(--shadow-strong);
+	transition: background-color 160ms ease, transform 120ms ease, box-shadow 160ms ease;
+}
+
+.active:hover,
+li.active > a:hover,
+a.active:hover {
+	background-color: #2D4A60;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(58, 95, 125, 0.30);
+}
+
+.active:focus,
+li.active > a:focus,
+a.active:focus {
+	outline: 3px solid rgba(58, 95, 125, 0.3);
+	outline-offset: 2px;
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
+}
+
+address{
+	margin: 0;
+	padding: 20px 0;
+	color: #667C8F; /* gris azulado para texto secundario */
+}
+
+.semester-message {
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	font-family: Georgia, serif;
+	color: var(--accent); /* azul gris: coherencia con paleta */
+	margin: 10px 5px;
+	padding: 5px;
+	text-shadow: 1px 1px 2px rgba(200,200,200,0.3);
+}
+
+/* Ajustes responsivos básicos */
+@media (max-width: 700px) {
+	h1 { font-size: 36px; }
+	.site-nav ul { flex-direction: column; gap: 8px; padding: 10px; }
+	li a { padding: 12px 16px; }
+}
+
+/* Hamburger (CSS-only) navigation controls */
+.nav-toggle {
+	position: absolute;
+	left: -9999px;
+}
+
+.nav-toggle-label {
+	display: none; /* shown only on small screens */
+	cursor: pointer;
+	width: 42px;
+	height: 36px;
+	position: relative;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+	display: block;
+	background: var(--text); /* menú hamburgesa en gris-azul profundo */
+	height: 3px;
+	width: 26px;
+	border-radius: 3px;
+	position: absolute;
+	left: 8px;
+	transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.nav-toggle-label span { top: 16px; }
+.nav-toggle-label span::before { content: ''; top: -8px; }
+.nav-toggle-label span::after { content: ''; top: 8px; }
+
+/* When toggle is checked, animate the hamburger to an X and show the menu */
+.nav-toggle:checked + .nav-toggle-label span {
+	transform: rotate(45deg);
+}
+.nav-toggle:checked + .nav-toggle-label span::before {
+	transform: rotate(90deg) translateX(-1px);
+	top: 0;
+	opacity: 0;
+}
+.nav-toggle:checked + .nav-toggle-label span::after {
+	transform: rotate(-90deg);
+	top: 0;
+}
+
+/* Hide menu by default on small screens; show when checked */
+@media (max-width: 700px) {
+	.nav-toggle-label { display: inline-block; }
+	.site-nav ul { display: none; width: 100%; }
+	.nav-toggle:checked + .nav-toggle-label + ul { display: flex; }
+	/* Make nav full-width and visually distinct on mobile */
+	.site-nav { width: 100%; }
+	.site-nav ul { background-color: #5A9FD4; padding: 8px; border-radius: 16px; box-shadow: 0 2px 8px rgba(90, 159, 212, 0.15); }
+}
+
+/* On larger screens, ensure the label is hidden and menu visible */
+@media (min-width: 701px) {
+	.nav-toggle-label { display: none; }
+	.site-nav ul { display: flex !important; }
+}
