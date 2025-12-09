@@ -53,9 +53,18 @@
 
 body {
 	color: var(--text); /* texto gris-azulado para legibilidad en fondo blanco */
-	background: var(--bg); /* fondo blanco: limpieza y amplitud */
+	/* Degradado vertical: cielo despejado → horizonte azul claro */
+	/* Simula la vista desde una terminal: amplitud, claridad, profesionalidad */
+	background: linear-gradient(to bottom, 
+		#E3F2FD 0%,     /* azul cielo muy claro arriba */
+		#BBDEFB 35%,    /* azul cielo suave */
+		#FFFFFF 70%,    /* transición a blanco */
+		#F5F9FC 100%    /* blanco con tinte azul muy sutil */
+	);
+	background-attachment: fixed; /* el degradado permanece fijo al hacer scroll */
 	font-family: 'Segoe UI', sans-serif;
 	line-height: 1.6;
+	min-height: 100vh; /* asegura que el degradado cubra toda la altura */
 }
 
 h1 {
