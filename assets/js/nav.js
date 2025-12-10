@@ -9,7 +9,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     
     // Solicitar archivo del menú
-    fetch("../../nav.html")
+    fetch("nav.html")
         .then(response => response.text()) // Convertir respuesta a texto
         .then(html => {
 
