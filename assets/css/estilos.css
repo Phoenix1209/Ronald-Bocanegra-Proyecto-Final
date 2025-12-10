@@ -80,7 +80,7 @@ h1 {
 .content-image {
 	display: block;
 	margin: 20px auto;
-	max-width: 100%;
+	max-height: 350px;
 	height: auto;
 	border-radius: 8px;
 	box-shadow: 0 4px 12px rgba(58, 95, 125, 0.15);
@@ -291,7 +291,13 @@ address{
 
 /* Hide menu by default on small screens; show when checked */
 @media (max-width: 700px) {
-	.nav-toggle-label { display: inline-block; margin-left: 60px; }
+	.nav-toggle-label {
+		position: fixed;
+        top: 18px;       /* ajusta según tu gusto */
+        left: 20px;      /* queda al lado del avión */
+        z-index: 1000;
+		display: inline-block; margin-left: 50px;
+	}
 	.site-nav ul { display: none; width: 100%; }
 	.nav-toggle:checked + .nav-toggle-label + ul { display: flex; }
 	/* Make nav full-width and visually distinct on mobile */
